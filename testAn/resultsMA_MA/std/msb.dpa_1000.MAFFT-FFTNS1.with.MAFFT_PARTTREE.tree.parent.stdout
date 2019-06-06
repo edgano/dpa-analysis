@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    708
+Total # residues:    105575
+Smallest:            30
+Largest:             144
+Average length:      105.6
+Average identity:    18%
+//
+# Information content data saved to file ./resultsMA_MA/info/msb.dpa_1000.MAFFT-FFTNS1.with.MAFFT_PARTTREE.tree.parent.info.

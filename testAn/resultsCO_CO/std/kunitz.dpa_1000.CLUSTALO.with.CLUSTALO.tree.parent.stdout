@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    162
+Total # residues:    54254
+Smallest:            26
+Largest:             79
+Average length:      54.3
+Average identity:    31%
+//
+# Information content data saved to file ./resultsCO_CO/info/kunitz.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.

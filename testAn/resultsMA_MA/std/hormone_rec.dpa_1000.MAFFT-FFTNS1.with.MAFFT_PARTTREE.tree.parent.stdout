@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    1338
+Total # residues:    198251
+Smallest:            51
+Largest:             285
+Average length:      198.3
+Average identity:    13%
+//
+# Information content data saved to file ./resultsMA_MA/info/hormone_rec.dpa_1000.MAFFT-FFTNS1.with.MAFFT_PARTTREE.tree.parent.info.

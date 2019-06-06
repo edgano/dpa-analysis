@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    500
+Total # residues:    122533
+Smallest:            18
+Largest:             358
+Average length:      122.5
+Average identity:    45%
+//
+# Information content data saved to file ./resultsCO_CO/info/gpdh.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.

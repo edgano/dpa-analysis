@@ -1,4 +1,5 @@
 replace_U.pl ${seqs} 
+export DUMP_ALN_BUCKETS=1
 
 t_coffee -dpa -dpa_method mafftsparsecore_msa \
          -dpa_tree ${guide_tree} \

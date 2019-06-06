@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    512
+Total # residues:    177488
+Smallest:            32
+Largest:             285
+Average length:      177.5
+Average identity:    25%
+//
+# Information content data saved to file ./resultsCO_CO/info/hormone_rec.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.

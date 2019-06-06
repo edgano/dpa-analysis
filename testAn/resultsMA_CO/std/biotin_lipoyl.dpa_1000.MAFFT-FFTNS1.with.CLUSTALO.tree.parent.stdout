@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    188
+Total # residues:    72940
+Smallest:            30
+Largest:             106
+Average length:      72.9
+Average identity:    30%
+//
+# Information content data saved to file ./resultsMA_CO/info/biotin_lipoyl.dpa_1000.MAFFT-FFTNS1.with.CLUSTALO.tree.parent.info.

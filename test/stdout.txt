@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 93
+Alignment length:    56
+Total # residues:    4058
+Smallest:            34
+Largest:             50
+Average length:      43.6
+Average identity:    56%
+//
+# Information content data saved to file info.txt.

@@ -1,3 +1,5 @@
+export DUMP_ALN_BUCKETS=1
+
 t_coffee -dpa -dpa_method t_coffee_msa \
          -dpa_tree ${guide_tree} \
          -seq ${seqs} \

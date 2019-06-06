@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    1721
+Total # residues:    399724
+Smallest:            37
+Largest:             660
+Average length:      399.7
+Average identity:    20%
+//
+# Information content data saved to file ./resultsCO_MA/info/ace.dpa_1000.CLUSTALO.with.MAFFT_PARTTREE.tree.parent.info.

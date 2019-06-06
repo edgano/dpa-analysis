@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    182
+Total # residues:    76084
+Smallest:            27
+Largest:             97
+Average length:      76.1
+Average identity:    38%
+//
+# Information content data saved to file ./resultsCO_CO/info/kringle.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.

@@ -34,10 +34,10 @@
  */
 
 // input sequences to align in fasta format
-params.seqs = "$baseDir/data/combined_seqs/seatoxin.fa"
+params.seqs = "$baseDir/data/>1000_combined/*.fa"
 
 // input reference sequences aligned in 
-params.refs = "$baseDir/data/refs/seatoxin.ref"
+params.refs = "$baseDir/data/refs/*.ref"
 
 // input guide trees in Newick format. Or `false` to generate trees
 //params.trees = "$baseDir/data/trees/*.CLUSTALO.dnd"
@@ -47,16 +47,16 @@ params.trees = false
 params.align_method = "CLUSTALO,MAFFT-FFTNS1"  //,MAFFT-FFTNS1,MAFFT-GINSI,PROBCONS,UPP"
 
 // which tree methods to run if `trees` == `false`
-params.tree_method = "CLUSTALO,MAFFT_PARTTREE"  //,MAFFT-FFTNS1,MAFFT_PARTTREE"
+params.tree_method = "CLUSTALO,MAFFT_PARTTREE,CLUSTALO_RND_LEAVES"  //,MAFFT-FFTNS1,MAFFT_PARTTREE"
 
 // generate regressive alignments ?
 params.regressive_align = true
 
 // create standard alignments ?
-params.standard_align = true
+params.standard_align = false
 
 // create default alignments ? 
-params.default_align = true
+params.default_align = false
 
 // evaluate alignments ?
 params.evaluate = true
@@ -210,8 +210,9 @@ process regressive_alignment {
         val(tree_method), \
         val("dpa_align"), \
         val(bucket_size), \
-        file("*.aln") \
-        into regressive_alignments
+        file("*.aln"), \
+        file ("alndump..1.aln_bucket") \
+        into regressive_alignments , regressive_alignments2
 
     when:
       params.regressive_align
@@ -241,6 +242,39 @@ process default_alignment {
 
      script:
        template "default_align/default_align_${align_method}.sh"
+}
+
+process easel_info {
+    container 'edgano/hmmer'
+    tag "${id}.${align_method}.${tree_method}.DPA.easel_INFO"
+    publishDir "${params.output}/easelInfo", mode: 'copy', overwrite: true
+
+    input:
+      set val(id), \
+          val(align_method), \
+          val(tree_method), \
+          val(align_type), \
+          val(bucket_size), \
+          file(alignment_file),\
+          file("${id}.${align_method}.${tree_method}.DPA.dump") \
+        from regressive_alignments2
+
+    when:
+      params.regressive_align
+
+    output:
+      set file("${id}.${align_method}.${tree_method}.DPA.easel_INFO"), \
+      file("${id}.${align_method}.${tree_method}.DPA.easel_AVG"), \
+      file("${id}.${align_method}.${tree_method}.DPA.dump") \
+      into easel_info
+
+     shell:
+     '''
+     esl-alistat --icinfo !{id}.!{align_method}.!{tree_method}.DPA.easel_INFO !{id}.!{align_method}.!{tree_method}.DPA.dump
+     awk 'NR > 8 && $1 !~/\\// { sum+= $3 } END {print "SUM: "sum"\\nAVG: "sum/(NR-9)}' !{id}.!{align_method}.!{tree_method}.DPA.easel_INFO > !{id}.!{align_method}.!{tree_method}.DPA.easel_AVG
+
+     ## the first && is to skip first lines and the last one. The AVG is done -8 all the time execpt for the END print to "erase" the last "//" too.
+     '''
 }
 
 // Create a channel that combines references and alignments to be evaluated
@@ -320,3 +354,4 @@ workflow.onComplete {
   println (['bash','-c', "$baseDir/bin/cpu_calculate.sh ${params.output}/individual_scores"].execute().text)
   println "Execution status: ${ workflow.success ? 'OK' : 'failed' } runName: ${workflow.runName}" 
 }
+

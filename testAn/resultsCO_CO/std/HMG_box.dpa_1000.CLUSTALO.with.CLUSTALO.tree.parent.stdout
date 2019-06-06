@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    141
+Total # residues:    65322
+Smallest:            22
+Largest:             86
+Average length:      65.3
+Average identity:    31%
+//
+# Information content data saved to file ./resultsCO_CO/info/HMG_box.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.

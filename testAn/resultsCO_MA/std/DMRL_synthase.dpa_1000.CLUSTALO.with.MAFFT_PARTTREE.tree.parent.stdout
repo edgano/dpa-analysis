@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    230
+Total # residues:    137492
+Smallest:            50
+Largest:             168
+Average length:      137.5
+Average identity:    31%
+//
+# Information content data saved to file ./resultsCO_MA/info/DMRL_synthase.dpa_1000.CLUSTALO.with.MAFFT_PARTTREE.tree.parent.info.

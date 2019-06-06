@@ -108,7 +108,7 @@ RUN wget ftp://ftp.ncbi.nih.gov/pub/msa/msa.tar.Z && \
 # Install TCOFFEE
 RUN git clone https://github.com/cbcrg/tcoffee.git tcoffee && \
     cd tcoffee && \
-    git checkout 16617b9d9c393de348e0afae3024eb6c69a4527f && \
+    git checkout e8ea3ba54cf1983d1c61ffd2993c0b376e28fba0 && \
     cd compile && \
     make t_coffee && \
     cp t_coffee /bin/.
@@ -116,13 +116,15 @@ RUN git clone https://github.com/cbcrg/tcoffee.git tcoffee && \
 ENV CACHE_4_TCOFFEE='${TMPDIR:-/tmp}/.tcoffee/cache'
 ENV LOCKDIR_4_TCOFFEE='${TMPDIR:-/tmp}/.tcoffee/lock'
 ENV TMP_4_TCOFFEE='${TMPDIR:-/tmp}/.tcoffee/tmp'
+ENV DUMP_ALN_BUCKETS=1  
+# to get parent MSA 
 
 # Test Data
-RUN mkdir /test_data && \
-    cd test_data && \
-    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/seqs/rnasemam.fa && \
-    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/seqs/seatoxin.fa && \
-    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/refs/rnasemam.ref && \
-    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/refs/seatoxin.ref && \
-    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/trees/rnasemam.dnd && \
-    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/trees/seatoxin.dnd 
+# RUN mkdir /test_data && \
+#    cd test_data && \
+#    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/seqs/rnasemam.fa && \
+#    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/seqs/seatoxin.fa && \
+#    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/refs/rnasemam.ref && \
+#    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/refs/seatoxin.ref && \
+#    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/trees/rnasemam.dnd && \
+#    wget https://raw.githubusercontent.com/skptic/dpa-analysis/master/tutorial/trees/seatoxin.dnd 

@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    777
+Total # residues:    270940
+Smallest:            38
+Largest:             459
+Average length:      270.9
+Average identity:    23%
+//
+# Information content data saved to file ./resultsMA_MA/info/lyase_1.dpa_1000.MAFFT-FFTNS1.with.MAFFT_PARTTREE.tree.parent.info.

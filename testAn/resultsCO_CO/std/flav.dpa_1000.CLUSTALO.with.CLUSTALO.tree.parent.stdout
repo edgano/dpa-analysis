@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    408
+Total # residues:    141058
+Smallest:            39
+Largest:             208
+Average length:      141.1
+Average identity:    24%
+//
+# Information content data saved to file ./resultsCO_CO/info/flav.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.

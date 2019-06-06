@@ -1,4 +1,6 @@
 unset MAFFT_BINARIES
+export DUMP_ALN_BUCKETS=1
+
 t_coffee -dpa -dpa_method mafftginsi_msa \
          -dpa_tree ${guide_tree} \
          -seq ${seqs} \

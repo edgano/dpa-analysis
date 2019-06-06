@@ -1,0 +1,11 @@
+Alignment number:    1
+Format:              aligned FASTA
+Number of sequences: 1000
+Alignment length:    746
+Total # residues:    160207
+Smallest:            35
+Largest:             330
+Average length:      160.2
+Average identity:    21%
+//
+# Information content data saved to file ./resultsCO_CO/info/mmp.dpa_1000.CLUSTALO.with.CLUSTALO.tree.parent.info.
